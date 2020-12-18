@@ -1,52 +1,16 @@
-<div class="center-content">
-  <mat-card class="example-card">
-    <mat-card-header>
+<div class="container-fluid">
+<h1 class="text-center">Contact App Case</h1>
 
-      <mat-card-title>Login/Registration Form</mat-card-title>
-
-    </mat-card-header>
-
-    <mat-card-content>
-      <mat-tab-group>
-        <mat-tab label="Login">
-          <mat-form-field class="example-full-width">
-            <mat-label>Username</mat-label>
-            <input type="text" matInput placeholder="Username" value="" [(ngModel)]="log_username" required>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Password" [(ngModel)]="log_password" required>
-          </mat-form-field>
-          <button mat-button color="primary" (click)="login()">Login</button>
-        </mat-tab>
-
-        <mat-tab label="Register">
-          <mat-form-field class="example-full-width">
-            <mat-label>Username</mat-label>
-            <input type="Username" matInput placeholder="Email" value="" [(ngModel)]="reg_username" required>
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Password" [(ngModel)]="reg_password" required>
-          </mat-form-field>
-         
-          <mat-form-field class="example-full-width">
-            <mat-label>Phonenumber</mat-label>
-            <input type="text" matInput placeholder="Phonenumber" [(ngModel)]="reg_phonenumber" required>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>DOB</mat-label>
-            <input type="text" matInput placeholder="DateOfBirth" [(ngModel)]="reg_dob" required>
-          </mat-form-field>
-          <button mat-button color="primary" (click)="register()">Register</button>
-        </mat-tab>
-
-      </mat-tab-group>
-
-    </mat-card-content>
-
-  </mat-card>
+<div class = "row">
+  <div class = "col-2" [hidden]="ishidden">
+    <a routerLink = "register" class = "btn btn-primary">Register</a> 
+  </div>
+ 
+  <div class = "col-2"[hidden]="ishidden">
+    <a routerLink = "login" class = "btn btn-primary">Login</a>
+  </div>
+</div>
+<hr /> 
+<router-outlet></router-outlet>
 
 </div>

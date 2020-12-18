@@ -1,34 +1,35 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import {FormsModule} from '@angular/forms';
+import {Routes,RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
+let routes : Routes =[
+  {path : "",component : RegistrationFormComponent},
+  {path : "register" , component : RegistrationFormComponent},
+  {path : "login", component : LoginFormComponent},
+  {path : "success/:profileId/addContacts" , component : AddContactsComponent},
+  {path : "success/:profileId/editProfile",component : EditProfileComponent},
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginFormComponent,
+    RegistrationFormComponent,
+    AddContactsComponent,
+    EditProfileComponent,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatTabsModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule
-
+    BrowserModule,FormsModule,RouterModule.forRoot(routes),HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
